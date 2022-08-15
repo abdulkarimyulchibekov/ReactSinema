@@ -1,0 +1,88 @@
+.movie__container {
+  width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.movie__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.movie {
+  background-color: #444;
+  padding: 20px 0;
+}
+
+.movie__img {
+  height: auto;
+  width: 500px;
+  margin-right: 20px;
+}
+
+.movie__body {
+  display: flex;
+  align-items: start;
+}
+
+.movie__text {
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.movie__overview {
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.movie__list {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie__budget {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie__production {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.item-active {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.movie__date {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie__page {
+  color: aliceblue;
+}
+
+.movie__tagline {
+  text-align: center;
+  color: aliceblue;
+  margin-top: 0;
+  margin-bottom: 30px;
+}

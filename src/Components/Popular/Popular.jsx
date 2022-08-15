@@ -24,6 +24,7 @@ export const Popular = () => {
 				<ul className='toprated-list'>
 					{data.map((e) => (
 						<PopularItem
+							id={e.id}
 							key={e.id}
 							img={e.poster_path}
 							name={e.original_title}
