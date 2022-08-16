@@ -1,0 +1,73 @@
+.actor {
+  background-color: #333;
+  min-height: 100vh;
+}
+
+.actor__container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.actor__body {
+  margin-top: 50px;
+}
+
+.actor__img {
+  margin-top: 50px;
+  margin-right: 40px;
+}
+
+.actor__header {
+  color: #fff;
+  font-size: 36px;
+}
+
+.actor__biography {
+  width: 500px;
+}
+
+.actor__birthday {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.actor__birthplace {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.actor__homepage {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.actor__biography {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.actor__subheader {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.actor__list {
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.actor__item {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.movie__box {
+  display: flex;
+}

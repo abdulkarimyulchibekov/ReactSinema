@@ -3,27 +3,45 @@ import { useEffect } from 'react';
 import './toprated.scss';
 import axios from 'axios';
 import { PopularItem } from '../PopularItem/PopularItem';
+import { PaginationMovies } from '../Pagination/Pagination';
 
 export const TopRated = () => {
-	const [data, setData] = useState([]);
+	const [activePage, setActivePage] = useState(1)
+	const [data, setData] = useState({
+		isLoading: true,
+		isError: false,
+		data: [],
+		totalPage: 1
+	});
 	useEffect(() => {
 		axios
 			.get(
-				'https://api.themoviedb.org/3/movie/top_rated?api_key=59867cf02cd5475d04f7dec22c933487',
+				'https://api.themoviedb.org/3/movie/top_rated',{
+					params: {
+						api_key: "59867cf02cd5475d04f7dec22c933487" ,
+						page:  activePage,
+					}
+				}
 			)
 			.then(function (response) {
-				setData(response.data.results);
+				console.log(response.data);
+				setData({
+					isLoading:  false,
+					isError: false,
+					data: response.data.results,
+					totalPage: response.data.total_pages > 500 ? 500 : response.data.total_pages,
+				}
+				);
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
-	}, []);
-	console.log(data);
+	}, [activePage]);
 	return (
 		<div className='box'>
 			<div className='container'>
 				<ul className='toprated-list'>
-					{data.map((e) => (
+					{data?.data?.map((e) => (
 						<PopularItem
 							id={e.id}
 							key={e.id}
@@ -36,6 +54,7 @@ export const TopRated = () => {
 					))}
 				</ul>
 			</div>
+			<PaginationMovies page={data.totalPage} setActivePage={setActivePage} />
 		</div>
 	);
 };

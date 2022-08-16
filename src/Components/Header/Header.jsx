@@ -1,7 +1,16 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.scss';
 export const Header = () => {
+	const [inputVal, setInputVal] = useState("")
+	const navigate = useNavigate()
+	useEffect(() => {
+		if(inputVal.trim().length) {
+			navigate("/search/" + inputVal)
+		} else {
+			navigate("/")
+		}
+	}, [inputVal])
 	return (
 		<div className='header'>
 			<div className='container'>
@@ -43,7 +52,7 @@ export const Header = () => {
 							</NavLink>
 						</li>
 						<li className='item'>
-							<input className='header-input' type="text" placeholder='Search...'/>
+							<input onKeyUp={(evt) => {setInputVal(evt.target.value)}} className='header-input' type="text" placeholder='Search...'/>
 						</li>
 					</ul>
 				</nav>
